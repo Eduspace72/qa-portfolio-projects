@@ -11,7 +11,7 @@ Aqui, você encontrará exemplos práticos do meu trabalho em automação de tes
 ### **Habilidades e Ferramentas**
 
 * **Automação Web:** Selenium WebDriver, Playwright, Mocha, Chai, JavaScript
-* **Testes de API:** Postman, Jest, Axios
+* **Testes de API:** Postman, Jest
 * **CI/CD:** GitHub Actions
 * **Metodologias:** Testes Funcionais, Testes de Regressão, Testes Manuais
 
