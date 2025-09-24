@@ -1,7 +1,7 @@
-# qa-portfolio-projects
+# portfolio-projects
 Um portfólio de projetos de automação de testes web, API e manuais usando JavaScript.
 
-# Portfolio de Testes de Qualidade de Software
+# Portfolio de Testes de Software
 
 Olá! Eu sou Eduardo Braz da Motta, e este é o meu portfólio de projetos de testes de software.
 Aqui, você encontrará exemplos práticos do meu trabalho em automação de testes, validação de APIs e documentação de testes manuais.
