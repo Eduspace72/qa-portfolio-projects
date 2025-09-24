@@ -89,8 +89,7 @@ O Playwright não só me ajudou a escrever testes mais robustos, como também pe
 
 ### 📈 Resultado dos Testes
 
-![Imagem do terminal mostrando os 12 testes passados]
-*(Insira aqui a imagem do seu terminal mostrando "12 passed")*
+https://github.com/Eduspace72/qa-portfolio-projects/issues/1
 
 Este resultado demonstra que tanto o teste de login positivo quanto o negativo foram bem-sucedidos em todos os navegadores testados.
 
