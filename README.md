@@ -1,117 +1,100 @@
+# Portfolio de Testes de Software
+Um portfólio de projetos de automação de testes web, API e manuais usando JavaScript.
 
-# Banco Web
 
-## Descrição
-Este é um projeto de aplicação web criado para fins educacionais, com o objetivo de ensinar conceitos de teste de software. Ele consome uma API REST (Banco API) e oferece funcionalidades como login, transferências entre contas e listagem de transferências.
+Olá! Eu sou Eduardo Braz da Motta, e este é o meu portfólio de projetos de testes de software.
+Aqui, você encontrará exemplos práticos do meu trabalho em automação de testes, validação de APIs e documentação de testes manuais.
 
-## Dependências
-Este projeto depende da API REST disponível no repositório [Banco API](https://github.com/juliodelimas/banco-api/).
+---
 
-Antes de executar o `Banco Web`, certifique-se de que a API esteja configurada e rodando.
+### **Habilidades e Ferramentas**
 
-## Tecnologias Utilizadas
-- **Backend**: Node.js com Express
-- **Mock Server**: Mockoon
-- **Frontend**: HTML, CSS (Materialize CSS), e JavaScript
-- **Bibliotecas**:
-  - [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API): Para chamadas HTTP
-  - [dotenv](https://github.com/motdotla/dotenv): Para configuração de variáveis de ambiente
+* **Automação Web:** Selenium WebDriver, Playwright, Mocha, Chai, JavaScript
+* **Testes de API:** Postman, Jest
+* **CI/CD:** GitHub Actions
+* **Metodologias:** Testes Funcionais, Testes de Regressão, Testes Manuais
 
-## Instalação e Configuração
+---
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/juliodelimas/banco-web.git
-   cd banco-web
-   ```
+### **Projetos**
 
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
+#### **1. Automação Web (UI)**
+* **Descrição:** Neste projeto, desenvolvi um conjunto de testes de regressão automatizados para garantir a funcionalidade crítica do site Banco Web. O framework, construído com Selenium WebDriver e JavaScript, cobre testes end-to-end do fluxo de login, pesquisa de produtos e validação de elementos da página, garantindo que as funcionalidades principais operem como esperado.
+* **Ferramentas:** Selenium WebDriver, Mocha, Chai.
+* **Status:** Em desenvolvimento.
+* **Acessar:** http://localhost:4000
 
-3. Configure as variáveis de ambiente:
-   Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
-   ```env
-   API_BASE_URL=http://localhost:3000 # URL base da API REST Banco API ou do Mock Server
-   PORT=4000                         # Porta em que o servidor será executado
-   ```
+#### **2. Testes de API**
+* **Descrição:** Análise e automação de testes para a API pública [Nome da API]. O projeto contém uma coleção de testes no Postman e scripts automatizados com Jest e Axios, focados em validar os endpoints de GET, POST, PUT e DELETE. O objetivo é garantir que a API se comporte de forma consistente e segura.
+* **Ferramentas:** Postman.
+* **Status:** Em desenvolvimento.
+* **Acessar:** 
 
-4. Execute o servidor:
-   ```bash
-   npm run server
-   ```
+#### **3. Testes Manuais**
+* **Descrição:** Este projeto demonstra o ciclo de vida de um teste manual, desde o planejamento até a execução e o reporte de defeitos. Contém planos de teste definindo o escopo e a estratégia, casos de teste detalhados em formato tabular, e exemplos de relatórios de bugs que seguem as melhores práticas do mercado, com informações claras para o time de desenvolvimento.
+* **Documentação:** 
+---
 
-5. Execute o servidor de Mock (Opcional):
-   ```bash
-   npm run mock-server
-   ```
+Primeiro teste executado: login positivo e login negativo.
 
-6. Abra o navegador e acesse:
-   ```
-   http://localhost:4000
-   ```
+# Projeto de Testes de Login com Playwright
 
-## Funcionalidades
+Este repositório contém os testes de automação de interface para a funcionalidade de login de uma aplicação web, utilizando a ferramenta Playwright. O projeto abrange tanto o cenário de sucesso (login com credenciais válidas) quanto o cenário de falha (login com credenciais inválidas).
 
-### Login
-- Permite autenticar um usuário através da API Banco.
-- Campos necessários:
-  - **Usuário**
-  - **Senha**
+### 🚀 Tecnologias Utilizadas
 
-### Realizar Transferência
-- Permite realizar transferências entre contas.
-- Campos necessários:
-  - **Conta Origem**
-  - **Conta Destino**
-  - **Valor**
-  - **Token** (apenas para valores superiores a R$ 5.000,00, use 123456 como valor fixo).
+* **Playwright:** Framework de automação de testes para navegadores.
+* **JavaScript:** Linguagem de programação utilizada para escrever os testes.
 
-### Listagem de Transferências
-- Exibe transferências realizadas com paginação.
-- Controles:
-  - **Página Anterior**
-  - **Página Atual**
-  - **Próxima Página**
+### ✅ Cenários de Teste
 
-### Consulta de Contas
-- Permite consultar contas cadastradas no sistema.
+O projeto de testes de login foi estruturado para garantir a robustez da funcionalidade, cobrindo os seguintes cenários:
 
-## Estrutura de Arquivos
+1.  **Cenário Positivo (Happy Path):**
+    * **Objetivo:** Verificar se o login é bem-sucedido com credenciais corretas.
+    * **Verificações:**
+        * A aplicação redireciona para a página principal após o login.
+        * O elemento principal da página de destino é exibido corretamente.
 
-```
-├── public
-│   ├── css
-│   │   └── styles.css          # Estilos da aplicação
-│   ├── js
-│   │   ├── setup.js            # Configuração inicial
-│   │   ├── login.js            # Lógica de login
-│   │   ├── transferencia.js    # Lógica de transferências
-│   │   └── contas.js           # Lógica de contas
-│   └── index.html              # Interface principal
-├── mocks
-│   └── banco-api.json          # Mocks da banco-api criados no Mockoon
-├── app.js                      # Servidor Express
-├── .env                        # Configurações de ambiente
-├── package.json                # Configuração do projeto
-└── README.md                   # Documentação
-```
+2.  **Cenário Negativo (Sad Path):**
+    * **Objetivo:** Garantir que a aplicação lida corretamente com credenciais inválidas.
+    * **Verificações:**
+        * Uma mensagem de erro apropriada é exibida na tela.
+        * A aplicação não redireciona o usuário, mantendo-o na página de login.
 
-## Melhorias Implementadas
+### 💡 Minha Jornada e Aprendizados
 
-### Código JavaScript
-Os arquivos JavaScript foram revisados e melhorados com base nas boas práticas de programação. Aqui estão algumas das melhorias realizadas:
+Durante o desenvolvimento deste projeto, tive a oportunidade de migrar de uma abordagem inicial com **Selenium** para o **Playwright**. Essa transição foi crucial. Percebi que, embora o Selenium seja uma ferramenta poderosa, o Playwright me ofereceu maior agilidade e confiabilidade, especialmente com seu sistema de espera automática e sua configuração mais simples.
 
-- **Tratamento de Erros:** Adicionado `try-catch` para gerenciar falhas nas requisições assíncronas.
-- **Melhor Manipulação do DOM:** Substituído `innerHTML` por métodos como `createElement` para prevenir problemas de segurança.
-- **Validação de Entradas:** Verificações adicionadas para garantir que todos os campos estejam preenchidos antes de enviar requisições.
-- **Feedback ao Usuário:** Mensagens visuais aprimoradas para indicar progresso ou erros de maneira mais clara.
+O Playwright não só me ajudou a escrever testes mais robustos, como também permitiu que eu os executasse de forma nativa em múltiplos navegadores (Chromium, Firefox e WebKit), garantindo que a funcionalidade de login se comportasse como esperado em todos os ambientes.
 
-Os arquivos revisados estão disponíveis no diretório `public/js/`.
+### ⚙️ Como Executar os Testes
 
-## Autor
-Desenvolvido por **Júlio de Lima** para treinamentos de teste de software.
+1.  **Pré-requisitos:** Certifique-se de ter o Node.js instalado na sua máquina.
+2.  **Instalação:**
+    ```bash
+    npm install
+    ```
+3.  **Executar os testes:**
+    ```bash
+    npx playwright test
+    ```
+    * O comando acima irá executar todos os testes em Chromium, Firefox e WebKit.
+    
+    Para visualizar o relatório em HTML após a execução, use:
+    ```bash
+    npx playwright show-report
+    ```
 
-## Licença
-Este projeto é licenciado sob a Licença ISC.
+### 📈 Resultado dos Testes
+
+https://github.com/Eduspace72/qa-portfolio-projects/issues/1
+
+Este resultado demonstra que tanto o teste de login positivo quanto o negativo foram bem-sucedidos em todos os navegadores testados.
+
+
+### **Contato**
+
+* **LinkedIn:** www.linkedin.com/in/eduardo-motta-qa
+
+* **Email:** eduardomotta72@gmail.com
