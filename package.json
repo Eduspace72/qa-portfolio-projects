@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha tests/ui/login-positivo.test.js",
+    "start": "app.js",
     "server": "node app.js",
-    "mock-server": "mockoon-cli start --data ./mocks/banco-api.json --port 3000"
+    "mock-server": "mockoon-cli start --data ./mocks/banco-api.json --port 5000"
   },
   "keywords": [],
   "author": "",
@@ -13,10 +14,15 @@
   "description": "",
   "dependencies": {
     "axios": "^1.7.9",
+    "chai": "^6.0.1",
     "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "selenium-webdriver": "^4.35.0"
   },
   "devDependencies": {
-    "@mockoon/cli": "^9.1.0"
+    "@mockoon/cli": "^9.1.0",
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.5.2",
+    "mocha": "^11.7.2"
   }
 }
